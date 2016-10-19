@@ -79,3 +79,28 @@ Viz soubor `conf/bird6.conf`
 ### Konfigurace radvd
 
 Viz soubor `conf/radvd.conf`
+
+## Rozbehnuti IPv6 konektivity
+
+1. RA od poskytovatele
+  - prefix
+  - def. GW
+  - dhcp
+2. DHCPv6 client
+  - DNS?
+  - prideleny delegovany prefix?
+3. DHCPv6 server
+  1. **RA**
+    - def. gw
+    - prefix
+    - DHCPv6 varianta (stateless, ...)
+  2. **stateless DHCPv6**
+    - DNS
+    - lokalni domena
+
+### Alternativa
+
+**`pass-through`**/**`ndproxy`**?
+
+Pokud neni prideleny delegovany prefix, muze se router chovat
+jako bridge/switch pro IPv6 - IPv6 'proxy', preposila ND
