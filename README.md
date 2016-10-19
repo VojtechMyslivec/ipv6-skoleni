@@ -54,3 +54,28 @@ ip -6 neighbor
 ```
 rdisc6 eth0
 ```
+
+## Router advertisment
+
+- oznameni lokalniho prefixu a defaultni cesty
+- casovace
+  - `valid_lifetime`
+    - jak dlouho bude cesta platna
+    - nejmene 2 h
+  - `preferred_lifetime`
+    - kdyz vyprsi, je po dobu `valid_lifetime` jeste deprecated
+    - pokud bude jina platna cesta, pouzije ji
+    - po dobu `valid` tedy zustava jako zalozni cesta
+- host si vezme vsechny IP, ktere obdrzi v *RA*
+
+- nastroj `ramond` pro monitorovani *RA*
+
+### Konfigurace bird
+
+Viz soubor `conf/bird6.conf`
+
+[docs](http://bird.network.cz/?get_doc&f=bird-6.html#ss6.9)
+
+### Konfigurace radvd
+
+Viz soubor `conf/radvd.conf`
