@@ -26,3 +26,31 @@ Autori skoleni:
   - unicast, multicast
     - broadcast je *all-hosts* multicast adresa (moc se nepouziva)
   - u IPv6 je bezne vice adres na jednom interface
+
+## Sikovne prikazy
+
+- pridelene adresy + multicast skupiny
+
+```
+ip -6  address
+ip -6 maddress
+```
+
+- ping multicast adresy *all-nodes* ci *all-routers*
+
+```
+ping6 -c 2 ff02::1%eth0
+ping6 -c 2 ff02::2%eth0
+```
+
+- cistsi zjisteni sousedu:
+
+```
+ip -6 neighbor
+```
+
+- informace o ohlasenem smerovaci
+
+```
+rdisc6 eth0
+```
