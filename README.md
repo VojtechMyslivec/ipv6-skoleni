@@ -104,3 +104,13 @@ Viz soubor `conf/radvd.conf`
 
 Pokud neni prideleny delegovany prefix, muze se router chovat
 jako bridge/switch pro IPv6 - IPv6 'proxy', preposila ND
+
+## 6-to-4 tunel
+
+- rozbehnuti IPv6 konektivity pres IPv4 only uplink
+- vyzaduje verejnou IPv4 adresu
+- vnitrni sit ma prideleny prefix
+  - `2002:IP:v4::/48`
+  - hranicni router tuneluje do IPv4 packetu
+  - konec tunelu je *anycast* IP `192.88.99.1`
+    - v CR provozuje **cz.nic** :tada:
